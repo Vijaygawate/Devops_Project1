@@ -35,3 +35,15 @@ test connection > apply and save
 do same for ansible 
 **Step5**:
 Creation of jenkins job:
+Scm-- add repo url 
+branch--main 
+build > send files or execute commands over ssh 
+name--jenkins 
+excec command -
+#rsync -avh /var/lib/jenkins/workspace/devops_project/*.html root@172.31.15.201:/opt/index.html
+post build action : 
+name--ansible 
+exec command -
+#ansible-playbook /devops.yml
+**Step6**:
+Create devops.yml playbook in ansible server which will copy index.html file from ansible server to web sever 
